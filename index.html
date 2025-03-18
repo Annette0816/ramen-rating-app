@@ -3,10 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js"></script>
+    <title>Ramen Rating App</title>
+    <style>
+        #header {
+           display: flex;
+           background-color: black;
+           justify-content: center;
+          -webkit-text-fill-color: azure;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: beige;
+          
+        }
+        #ramen-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            
+        }
+        #ramen-menu img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            display: flex;
+            justify-self: center;
+        }
+        #ramen-menu img:hover {
+            border-color: #ff6347;
+            
+           
+        }
+        #ramen-detail {
+            margin-top: 20px;
+            padding: 10px;
+           
+            border-radius: 5px;
+            
+             img{
+                width: 350px;
+                height: auto;
+               display: block;
+               margin: 0 auto;
+               border-radius: 20px;
+               
+               
+            }
+            .rating-comment{
+                display: flex;
+                justify-content: center;
+            }
+            .ramen-restaurant{
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+        #new-ramen {
+            margin-top: 20px;
+            h3{
+                display: flex;
+                justify-content: center;
+            }
+            
+        }
+        #new-ramen input, #new-ramen textarea {
+            margin-bottom: 10px;
+            width: 200px;
+            padding: 5px;
+            display: flex;
+            justify-self: center;
+        }
+        #new-ramen button {
+            padding: 5px 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-self: center;
+        }
+        #new-ramen button:hover {
+            background-color: #e5533d;
+        }
+        #new-ramen label{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
+    <h1 id="header">Ramen Rater</h1>
+
     
+    <div id="ramen-menu"></div>
+
+  
+    <div id="ramen-detail">
+        <img id="Image"/>
+        <br>
+        <h2 id="detail-name", class="ramen-restaurant">Ramen Name</h2>
+        <p id="detail-restaurant", class="ramen-restaurant">Restaurant</p>
+        <p id="detail-rating", class="rating-comment"><span>Rating: N/A</span></p>
+        <p id="detail-comment", class="rating-comment">Comment: </p>
+    </div>
+
+    
+    <form id="new-ramen">
+        <h3>Add New Ramen</h3>
+        
+        <label for="name">Name</label>
+        <input type="text" id="new-name" placeholder="Ramen Name" required>
+        <label for="restaurant">Restaurant</label>
+        <input type="text" id="new-restaurant" placeholder="Restaurant" required>
+        <label for="Image">Image</label>
+        <input type="text" id="new-image" placeholder="Image (e.g., shoyu.jpg)" required>
+        <label for="rating">Rating</label>
+        <input type="number" id="new-rating" placeholder="Rating (1-5)" min="1" max="5">
+        <label for="comment">Comment</label>
+        <textarea id="new-comment" placeholder="Comment"></textarea>
+        <button type="submit">Add Ramen</button>
+    </form>
+
+    <script src="index.js"></script>
 </body>
 </html>
