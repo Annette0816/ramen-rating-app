@@ -24,11 +24,8 @@ function handleClick(ramen) {
     document.getElementById("detail-name").textContent = ramen.name || "Ramen Name";
     document.getElementById("Image").src = ramen.image;
     document.getElementById("detail-restaurant").textContent = ramen.restaurant || "Restaurant";
-    document.getElementById("detail-rating").textContent = ramen.rating ? `Rating: ${ramen.rating}` : "Rating: N/A";
+    document.getElementById("detail-rating").textContent = ramen.rating ? `Rating: ${ramen.rating}`: "Rating:N/A";
     document.getElementById("detail-comment").textContent = ramen.comment || "No comment";
-}
-function onClick(ramen) {
-    
 }
 
 
@@ -41,16 +38,16 @@ function addSubmitListener() {
             id: ramens.length + 1, 
             name: document.getElementById("new-name").value,
             restaurant: document.getElementById("new-restaurant").value,
-            image: `images/${document.getElementById("new-image").value}`, 
+            image: `images/${document.getElementById("new-image").value}` ,
             rating: parseInt(document.getElementById("new-rating").value) || undefined,
             comment: document.getElementById("new-comment").value || undefined
         };
 
         ramens.push(newRamen); 
         displayRamens(); 
-        this.reset();
+        form.reset();
     });
 }
 
 
-window.onload = displayRamens;
+window.onload = displayRamens();
